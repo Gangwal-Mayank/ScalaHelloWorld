@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
     - name: scala-sbt
-      image: sbtscala/scala-sbt:graalvm-ce-22.3.3-b1-java17_1.10.11_3.6.4
+      image: sbtscala/scala-sbt:11.0.17_1.9.7_2.13.12
       imagePullPolicy: Always
       command:
         - cat

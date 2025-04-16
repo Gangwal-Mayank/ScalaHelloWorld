@@ -10,7 +10,8 @@ metadata:
 spec:
   containers:
     - name: scala-sbt
-      image: hseeberger/scala-sbt:11.0.20.1_1.9.7_2.13.12
+      image: frankescobar/scala-sbt:scala-2.13.12-sbt-1.9.7
+      imagePullPolicy: Always
       command:
         - cat
       tty: true

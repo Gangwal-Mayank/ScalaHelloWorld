@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://your-git-repo-url/hello-scala.git' // Replace with your repo
+                git 'https://github.com/Gangwal-Mayank/ScalaHelloWorld.git' // Replace with your repo
             }
         }
 

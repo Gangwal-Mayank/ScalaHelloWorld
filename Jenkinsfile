@@ -1,23 +1,10 @@
 pipeline {
-    agent {
-        kubernetes {
-            yaml """
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    jenkins: slave
-spec:
-  containers:
-    - name: sbt-container
-      image: hseeberger/scala-sbt:11.0.20_1.9.7_2.13.12
-      command:
-        - cat
-      tty: true
-"""
-            defaultContainer 'sbt-container'
-        }
+    agent any
+
+    tools {
+        sbt 'SBT-1.9.7' // Ensure this matches the name of your SBT tool in Jenkins
     }
+
     stages {
         stage('Checkout') {
             steps {

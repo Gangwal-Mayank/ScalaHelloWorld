@@ -38,7 +38,9 @@ spec:
     stages {
         stage('Checkout') {
             steps {
+                container('scala-sbt') {
                 git 'https://github.com/Gangwal-Mayank/ScalaHelloWorld.git' // Replace with your repo
+                }
             }
         }
 

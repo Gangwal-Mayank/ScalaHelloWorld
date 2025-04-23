@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
     - name: scala-sbt
-      image: sbtscala/scala-sbt:eclipse-temurin-17.0.4_1.7.1_3.2.0
+      image: gangwama/scalagit:git-enabled
       imagePullPolicy: Always
       command:
         - cat

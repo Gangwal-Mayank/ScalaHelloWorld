@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
     - name: scala-sbt
-      image: sbtscala/scala-sbt:11.0.17_1.9.7_2.13.12
+      image: sbtscala/scala-sbt:eclipse-temurin-17.0.4_1.7.1_3.2.0
       imagePullPolicy: Always
       command:
         - cat

@@ -1,39 +1,6 @@
 pipeline {
-    agent {
-        kubernetes {
-            yaml """
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    jenkins: slave
-spec:
-  containers:
-    - name: scala-sbt
-      image: gangwama/scalagit:git-enabled
-      imagePullPolicy: Always
-      command:
-        - cat
-      tty: true
-      volumeMounts:
-        - mountPath: /root/.ivy2
-          name: ivy-cache
-        - mountPath: /root/.sbt
-          name: sbt-cache
-        - mountPath: /root/.cache
-          name: coursier-cache
-  volumes:
-    - name: ivy-cache
-      emptyDir: {}
-    - name: sbt-cache
-      emptyDir: {}
-    - name: coursier-cache
-      emptyDir: {}
-
-"""
-            defaultContainer 'sbt-container'
-        }
-    }
+    
+      agent { label 'scala' }
 
     stages {
         stage('Checkout') {
